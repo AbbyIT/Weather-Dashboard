@@ -9,7 +9,7 @@ let cityList = document.querySelector(".city-list");
 
 // addEventListener on search button
 searchButton.addEventListener("click", function (event) {
-  event.preventDefault();
+  t.preventDefault();
   // store searchInput into variable
   let city = searchInput.value;
   console.log(city);

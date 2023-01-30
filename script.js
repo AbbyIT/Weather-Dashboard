@@ -7,6 +7,13 @@ let searchButton = document.querySelector("#search-button");
 let searchInput = document.querySelector("#search-input");
 let cityName = document.querySelector(".city-names");
 let weatherToday = document.querySelector("#today");
+// let Day1Forecast= document.querySelector("#forecastTitle1")
+// let Day2Forecast= document.querySelector("#forecastTitle2")
+// let Day3Forecast= document.querySelector("#forecastTitle3")
+// let Day4Forecast= document.querySelector("#forecastTitle4")
+// let Day5Forecast= document.querySelector("#forecastTitle5")
+
+
 
 
 // Empty array to store cities in localStorage
@@ -118,17 +125,54 @@ function renderWeather(weatherData) {
   let cityTitle = weatherData.city.name;
   let iconCode = weatherData.list[0].weather[0].icon;
   let iconURL = `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
+  let day2Weather = document.querySelector("#forecastTitle1");
+  let day3Weather = document.querySelector("#forecastTitle2");
+  let day4Weather = document.querySelector("#forecastTitle3");
+  let day5Weather = document.querySelector("#forecastTitle4");
 
   console.log(cityTitle);
 
-  let html = `<h1>${cityTitle} (${moment(weatherData.dt).format(
+  // current Weather
+  let html = `<h1>${cityTitle} (${moment(weatherData.list[0].dt_txt).format(
     "DD/MM/YYYY"
   )}) <img src='${iconURL}'></h1>
   <p>Temp: ${Math.floor(weatherData.list[0].main.temp)} &#8451</p>
-  <p>Wind</p>
-  <p>Humidity</p>`;
+  <p>Wind: ${weatherData.list[0].wind.speed}</p>
+  <p>Humidity: ${weatherData.list[0].main.humidity} </p>`;
+
+  console.log(weatherData.list[0])
 
   weatherToday.innerHTML = html;
+
+// Weather for day 2
+
+let iconCode2 = weatherData.list[9].weather[0].icon;
+let iconURL2 = `http://openweathermap.org/img/wn/${iconCode2}@2x.png`;
+let Day2html = `<h1>${cityTitle} (${moment(weatherData.list[9].dt_txt).format(
+  "DD/MM/YYYY"
+)}) <img src='${iconURL2}'></h1>
+<p>Temp: ${Math.floor(weatherData.list[9].main.temp)} &#8451</p>
+<p>Wind: ${weatherData.list[9].wind.speed}</p>
+<p>Humidity: ${weatherData.list[9].main.humidity} </p>`;
+
+day2Weather.innerHTML= Day2html;
+
+
+// Weather for day 3 
+
+let iconCode3 = weatherData.list[18].weather[0].icon;
+let iconURL3 = `http://openweathermap.org/img/wn/${iconCode3}@2x.png`;
+let Day3html = `<h1>${cityTitle} (${moment(weatherData.list[18].dt_txt).format(
+  "DD/MM/YYYY"
+)}) <img src='${iconURL2}'></h1>
+<p>Temp: ${Math.floor(weatherData.list[18].main.temp)} &#8451</p>
+<p>Wind: ${weatherData.list[18].wind.speed}</p>
+<p>Humidity: ${weatherData.list[18].main.humidity} </p>`;
+
+day3Weather.innerHTML= Day3html;
+
+
+// Weather for Day 3
 
 }
 

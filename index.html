@@ -21,16 +21,16 @@
   <!-- max-width for ultra wide resolutions -->
   
     <div class="container-fluid  text-center text-black  p-2 weather-header">
-    <div class="row">
-      <aside class="col-lg-3 pb-3">
-        <h2 id="form-heading" class="mt-1 h3 form-label">
+      <div class="row">
+       <aside class="col-lg-3 pb-3">
+         <h2 id="form-heading" class="mt-1 h3 form-label">
           Search for a City:
-        </h2>
-        <form id="search-form" class="form">
+          </h2>
+          <form id="search-form" class="form">
           <div class="form-inline form-group">
             <div class="input-group">
               <input class="form-input weather-search" type="text" id="search-input" placeholder="London"
-              aria-labelledby="form-heading" aria-controls="today forecast" />
+                aria-labelledby="form-heading" aria-controls="today forecast" />
               <div class="input-group-append"> 
                 <!-- <button type="submit" class="btn search-button" id="search-button" aria-label="submit search"> -->
                   <button type="submit" class="btn btn-primary btn-lg" id="search-button" aria-label="submit search"> Search</button>
@@ -38,12 +38,12 @@
                  
                 <hr class="hr weather-hr" />
               </div>
-            </div>
-             
+            </div>       
           </div>
         </form>
+
         <div class="list-group" id="history">
-          <ul class="city-names"></ul>
+            <ul class="city-names"></ul>
         </div>
       </aside>
       
@@ -54,51 +54,44 @@
 
       <div id= "forecast-Row">
         <h3>5- Day Forecast</h2>
-      <br></br>
+      <!-- <br></br> -->
 
-      <div class="card1" style="width: 10rem;">
-        <div class="card-body" id="forecastTitle1" >
-          <h5 class="card-title">Forecast 1</h5>
-         
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <div class="card1" style="width: 15rem;">
+        <div class="card-body" id="forecastTitle1" >   
+          <p class="card-text">Day 1</p>
           
         </div>
       </div>
       
-      <div class="card2" style="width: 10rem;">
-        <div class="card-body">
-          <h5 class="card-title">Forecast 2</h5>
+      <div class="card2" style="width: 15rem;">
+        <div class="card-body" id="forecastTitle2">
           
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <p class="card-text">Day 2</p>
           
         </div>
       </div>
       
-      <div class="card3" style="width: 10rem;">
-        <div class="card-body">
-          <h5 class="card-title">Forecast 3</h5>
-         
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <div class="card3" style="width: 15rem;">
+        <div class="card-body" id="forecastTitle3">
+          <p class="card-text">Day 3</p>
          
         </div>
       </div>
       
-      <div class="card4" style="width: 10rem;">
-        <div class="card-body">
-          <h5 class="card-title">Forecast 4</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <div class="card4" style="width: 15rem;">
+        <div class="card-body" id="forecastTitle4">
+          <p class="card-text">Day 4</p>
           
         </div>
       </div>
       
-      <div class="card5" style="width: 10rem;">
-        <div class="card-body">
-          <h5 class="card-title">Forecast 5</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <div class="card5" style="width: 15rem;">
+        <div class="card-body" id="forecastTitle5">
+          <p class="card-text">Day 5</p>
         </div>
       </div>
     </div>
-      <div class="col-lg-9 pb-3">
+      <!-- <div class="col-lg-9 pb-3"> -->
         
         <section id="forecast" class="row mt-3" role="region" aria-live="polite"></section>
         

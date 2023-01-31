@@ -1,19 +1,11 @@
 
 // API Key
 
-
 // Elements 
 let searchButton = document.querySelector("#search-button");
 let searchInput = document.querySelector("#search-input");
 let cityName = document.querySelector(".city-names");
 let weatherToday = document.querySelector("#today");
-// let Day1Forecast= document.querySelector("#forecastTitle1")
-// let Day2Forecast= document.querySelector("#forecastTitle2")
-// let Day3Forecast= document.querySelector("#forecastTitle3")
-// let Day4Forecast= document.querySelector("#forecastTitle4")
-// let Day5Forecast= document.querySelector("#forecastTitle5")
-
-
 
 
 // Empty array to store cities in localStorage
@@ -120,19 +112,22 @@ function cityWeatherSearch(cityName) {
     });
 }
 
+
 function renderWeather(weatherData) {
   
   let cityTitle = weatherData.city.name;
   let iconCode = weatherData.list[0].weather[0].icon;
   let iconURL = `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
-  let day2Weather = document.querySelector("#forecastTitle1");
-  let day3Weather = document.querySelector("#forecastTitle2");
-  let day4Weather = document.querySelector("#forecastTitle3");
-  let day5Weather = document.querySelector("#forecastTitle4");
+
+  let day1Weather = document.querySelector("#forecastTitle1");
+  let day2Weather = document.querySelector("#forecastTitle2");
+  let day3Weather = document.querySelector("#forecastTitle3");
+  let day4Weather = document.querySelector("#forecastTitle4");
+  let day5Weather = document.querySelector("#forecastTitle5");
 
   console.log(cityTitle);
 
-  // current Weather
+  // current Weather (Today)
   let html = `<h1>${cityTitle} (${moment(weatherData.list[0].dt_txt).format(
     "DD/MM/YYYY"
   )}) <img src='${iconURL}'></h1>
@@ -144,35 +139,77 @@ function renderWeather(weatherData) {
 
   weatherToday.innerHTML = html;
 
-// Weather for day 2
+  // Weather forecast Day 1 - NextDay
 
-let iconCode2 = weatherData.list[9].weather[0].icon;
+  let iconCode1 = weatherData.list[8].weather[0].icon;
+  let iconURL1 = `http://openweathermap.org/img/wn/${iconCode1}@2x.png`;
+  let Day1html = `<h1>${cityTitle} (${moment(weatherData.list[9].dt_txt).format(
+    "DD/MM/YYYY"
+  )}) <img src='${iconURL1}'></h1>
+  <p>Temp: ${Math.floor(weatherData.list[8].main.temp)} &#8451</p>
+  <p>Wind: ${weatherData.list[8].wind.speed}</p>
+  <p>Humidity: ${weatherData.list[8].main.humidity} </p>`;
+  
+  day1Weather.innerHTML= Day1html;
+
+
+// Weather forecast day 2
+
+let iconCode2 = weatherData.list[16].weather[0].icon;
 let iconURL2 = `http://openweathermap.org/img/wn/${iconCode2}@2x.png`;
-let Day2html = `<h1>${cityTitle} (${moment(weatherData.list[9].dt_txt).format(
+let Day2html = `<h1>${cityTitle} (${moment(weatherData.list[16].dt_txt).format(
   "DD/MM/YYYY"
 )}) <img src='${iconURL2}'></h1>
-<p>Temp: ${Math.floor(weatherData.list[9].main.temp)} &#8451</p>
-<p>Wind: ${weatherData.list[9].wind.speed}</p>
-<p>Humidity: ${weatherData.list[9].main.humidity} </p>`;
+<p>Temp: ${Math.floor(weatherData.list[16].main.temp)} &#8451</p>
+<p>Wind: ${weatherData.list[16].wind.speed}</p>
+<p>Humidity: ${weatherData.list[16].main.humidity} </p>`;
 
 day2Weather.innerHTML= Day2html;
 
 
-// Weather for day 3 
+// Weather forecast day 3 
 
-let iconCode3 = weatherData.list[18].weather[0].icon;
+let iconCode3 = weatherData.list[24].weather[0].icon;
+// let iconCode3 = {weatherData.list[24].weather[0].icon}@2x.png;
 let iconURL3 = `http://openweathermap.org/img/wn/${iconCode3}@2x.png`;
-let Day3html = `<h1>${cityTitle} (${moment(weatherData.list[18].dt_txt).format(
+let Day3html = `<h1>${cityTitle} (${moment(weatherData.list[24].dt_txt).format(
   "DD/MM/YYYY"
-)}) <img src='${iconURL2}'></h1>
-<p>Temp: ${Math.floor(weatherData.list[18].main.temp)} &#8451</p>
-<p>Wind: ${weatherData.list[18].wind.speed}</p>
-<p>Humidity: ${weatherData.list[18].main.humidity} </p>`;
+)}) <img src='${iconURL3}'></h1>
+<p>Temp: ${Math.floor(weatherData.list[24].main.temp)} &#8451</p>
+<p>Wind: ${weatherData.list[24].wind.speed}</p>
+<p>Humidity: ${weatherData.list[24].main.humidity} </p>`;
 
 day3Weather.innerHTML= Day3html;
 
 
-// Weather for Day 3
+// Weather for Day 4
+
+let iconCode4 = weatherData.list[32].weather[0].icon;
+let iconURL4 = `http://openweathermap.org/img/wn/${iconCode4}@2x.png`;
+let Day4html = `<h1>${cityTitle} (${moment(weatherData.list[32].dt_txt).format(
+  "DD/MM/YYYY"
+)}) <img src='${iconURL4}'></h1>
+<p>Temp: ${Math.floor(weatherData.list[32].main.temp)} &#8451</p>
+<p>Wind: ${weatherData.list[32].wind.speed}</p>
+<p>Humidity: ${weatherData.list[32].main.humidity} </p>`;
+
+day4Weather.innerHTML= Day4html;
+
+// Weather for Day 5
+
+let iconCode5 = weatherData.list[40].weather[0].icon;
+let iconURL5 = `http://openweathermap.org/img/wn/${iconCode5}@2x.png`;
+let Day5html = `<h1>${cityTitle} (${moment(weatherData.list[40].dt_txt).format(
+  "DD/MM/YYYY"
+)}) <img src='${iconURL5}'></h1>
+<p>Temp: ${Math.floor(weatherData.list[40].main.temp)} &#8451</p>
+<p>Wind: ${weatherData.list[40].wind.speed}</p>
+<p>Humidity: ${weatherData.list[40].main.humidity} </p>`;
+
+day5Weather.innerHTML= Day5html;
+
+
+
 
 }
 

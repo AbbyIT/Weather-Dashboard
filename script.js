@@ -36,7 +36,7 @@ function renderCities(cities) {
     const city = cities[i];
 
     // Create elements for every city searched
-    let cityButton = document.createElement("li");
+    let cityButton = document.createElement("textarea");
 
     // Assign text value
     cityButton.innerHTML = city;
@@ -143,7 +143,7 @@ function renderWeather(weatherData) {
 
   let iconCode1 = weatherData.list[8].weather[0].icon;
   let iconURL1 = `http://openweathermap.org/img/wn/${iconCode1}@2x.png`;
-  let Day1html = `<h1>${cityTitle} (${moment(weatherData.list[9].dt_txt).format(
+  let Day1html = `<h1>(${moment(weatherData.list[9].dt_txt).format(
     "DD/MM/YYYY"
   )}) <img src='${iconURL1}'></h1>
   <p>Temp: ${Math.floor(weatherData.list[8].main.temp)} &#8451</p>
@@ -157,7 +157,7 @@ function renderWeather(weatherData) {
 
 let iconCode2 = weatherData.list[16].weather[0].icon;
 let iconURL2 = `http://openweathermap.org/img/wn/${iconCode2}@2x.png`;
-let Day2html = `<h1>${cityTitle} (${moment(weatherData.list[16].dt_txt).format(
+let Day2html = `<h1>(${moment(weatherData.list[16].dt_txt).format(
   "DD/MM/YYYY"
 )}) <img src='${iconURL2}'></h1>
 <p>Temp: ${Math.floor(weatherData.list[16].main.temp)} &#8451</p>
@@ -172,7 +172,7 @@ day2Weather.innerHTML= Day2html;
 let iconCode3 = weatherData.list[24].weather[0].icon;
 // let iconCode3 = {weatherData.list[24].weather[0].icon}@2x.png;
 let iconURL3 = `http://openweathermap.org/img/wn/${iconCode3}@2x.png`;
-let Day3html = `<h1>${cityTitle} (${moment(weatherData.list[24].dt_txt).format(
+let Day3html = `<h1>(${moment(weatherData.list[24].dt_txt).format(
   "DD/MM/YYYY"
 )}) <img src='${iconURL3}'></h1>
 <p>Temp: ${Math.floor(weatherData.list[24].main.temp)} &#8451</p>
@@ -186,7 +186,7 @@ day3Weather.innerHTML= Day3html;
 
 let iconCode4 = weatherData.list[32].weather[0].icon;
 let iconURL4 = `http://openweathermap.org/img/wn/${iconCode4}@2x.png`;
-let Day4html = `<h1>${cityTitle} (${moment(weatherData.list[32].dt_txt).format(
+let Day4html = `<h1>(${moment(weatherData.list[32].dt_txt).format(
   "DD/MM/YYYY"
 )}) <img src='${iconURL4}'></h1>
 <p>Temp: ${Math.floor(weatherData.list[32].main.temp)} &#8451</p>
@@ -199,7 +199,7 @@ day4Weather.innerHTML= Day4html;
 
 let iconCode5 = weatherData.list[40].weather[0].icon;
 let iconURL5 = `http://openweathermap.org/img/wn/${iconCode5}@2x.png`;
-let Day5html = `<h1>${cityTitle} (${moment(weatherData.list[40].dt_txt).format(
+let Day5html = `<h1>(${moment(weatherData.list[40].dt_txt).format(
   "DD/MM/YYYY"
 )}) <img src='${iconURL5}'></h1>
 <p>Temp: ${Math.floor(weatherData.list[40].main.temp)} &#8451</p>

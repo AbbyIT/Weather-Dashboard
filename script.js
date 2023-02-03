@@ -36,7 +36,7 @@ function renderCities(cities) {
     const city = cities[i];
 
     // Create elements for every city searched
-    let cityButton = document.createElement("textarea");
+    let cityButton = document.createElement("li");
 
     // Assign text value
     cityButton.innerHTML = city;
@@ -149,7 +149,7 @@ function renderWeather(weatherData) {
   <p>Temp: ${Math.floor(weatherData.list[8].main.temp)} &#8451</p>
   <p>Wind: ${weatherData.list[8].wind.speed}</p>
   <p>Humidity: ${weatherData.list[8].main.humidity} </p>`;
-  
+  day1Weather.classList.add("backgroundBlue")
   day1Weather.innerHTML= Day1html;
 
 

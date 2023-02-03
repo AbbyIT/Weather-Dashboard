@@ -20,4 +20,6 @@ License Distributed under the MIT License. See LICENSE.txt for more information.
 
 Contact details- Abby Egbo https://github.com/AbbyIT
 
-Licenced by: MDN
+Licenced by: MDN!
+
+[README screenshot](https://user-images.githubusercontent.com/117487886/216158197-6195e5b6-990b-4693-8070-0cd06d759b64.jpg)
